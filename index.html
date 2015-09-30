@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <style type="text/css">
@@ -22,6 +22,15 @@
   <link rel="stylesheet" href="nav-wizard.css">
   <link rel="stylesheet" href="slider/css/slider.css">
   <script src="slider/js/bootstrap-slider.js"></script>
+  
+  <!--RECORD STUFF -->
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/watson-bootstrap-style.css" rel="stylesheet">
+    <link href="css/browser-compatibility.css" rel="stylesheet">
+    <link href="css/demo-stt.css" rel="stylesheet">
+	<!--End of record stuff  -->
 <script type="text/javascript">
       
       $(function() {
@@ -31,6 +40,27 @@
     $("#ex2").slider({});
     });
     </script>
+	<script type= "text/javascript">
+		function toggle_visibility1(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+		  
+		  toggle_visibility('record');
+    }
+		function StartRec(id)
+		{
+				var e = document.getElementById(id);
+				if(e.innerHTML == "הקלט זכרון")
+					e.innerHTML = "שמור";
+				else
+					e.innerHTML ="הקלט זכרון";
+				
+				toggle_visibility1('record');
+		}
+	</script>
 </head>
 <body>
     
@@ -50,7 +80,6 @@
 
 
 
-
 <div class="row">
   <div class="col-md-1">&nbsp;</div>
   <div class="col-md-10"><br/><center>
@@ -62,7 +91,27 @@
 <input type="text" class="span2" value="" data-slider-min="1900" data-slider-max="2015" data-slider-step="1" data-slider-value="1920" data-slider-orientation="vertical" data-slider-selection="after"data-slider-tooltip="hide"> -->
 
 
-  <br/></div>
+  <br/>
+  <!--Record html-->
+	<div id = "ShowrecordButton" class="button-row nav-inverse-color" style = "width:100%" onclick="StartRec('ShowrecordButton')">הקלט זכרון</div>
+	</div>
+
+
+<div id="record" style ="width:30%;high:30%;position:absolute;z-index:1;display:none;">
+	<div id = "recordButton" class="button-row nav-inverse-color" style = "width:100%">
+		<img id="microphoneIcon" src="images/microphone.svg" class="icon">
+	</div>
+	<ul></ul>
+	
+			<textarea  id="resultsText" style ="width:100% ; "></textarea>
+	
+    
+</div>
+<!--End Record html-->
+  
+  
+  
+  </div>
 <div class="col-md-1">&nbsp;</div></div>
 
 
@@ -76,38 +125,87 @@
     <script type="text/javascript">
 
 var map;
+
+
+
 function initMap() {
-   var myLatLng = {lat: -25.363, lng: 131.044};
-   var myLatLng2 = {lat: -24.363, lng: 131.044};
-   var myLatLng3 = {lat: -24.363, lng: 130.044};
-   var myLatLng4 = {lat: -26.363, lng: 131.044};
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: myLatLng
-  });
-
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-var marker = new google.maps.Marker({
-    position: myLatLng4,
-    map: map,
-    title: 'Hello World!'
-  });
-  var marker = new google.maps.Marker({
-    position: myLatLng2,
-    map: map,
-    title: 'Hello World!'
-  });
-  var marker = new google.maps.Marker({
-    position: myLatLng3,
-    map: map,
-    title: 'Hello World!'
-  });
+   <!--var myLatLng = {lat: -25.363, lng: 131.044};
+   <!--var myLatLng2 = {lat: -24.363, lng: 131.044};
+   <!--var myLatLng3 = {lat: -24.363, lng: 130.044};
+   <!--var myLatLng4 = {lat: -26.363, lng: 131.044};
+   
+   var stories = initstories();
+      
+	  
+	  
+   var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			center: stories[0].myLatLng
+		});
+	   for(i=0;i<4;i++)
+   {
+		var myLatLng = {lat: stories[i].myLatLng.lat, lng: stories[i].myLatLng.lng};
+		
+		var marker = new google.maps.Marker({
+			position: stories[i].myLatLng,
+			map: map,
+			title: stories[i].storyText
+		});
+   }   
 }
+function GetStories()
+{
+	<!--TooDo get stories from db-->
+	
+	
+	
+	var mapedStory1 = {name:"anton",myLatLng:{lat: 32.005, lng: 34.885},storyText:"אנטון עולה לארץ",minYear:1993,maxYear:1994};
+	var mapedStory2 = {name:"matan",myLatLng:{lat: 32.025, lng: 34.779},storyText:"מתן מתחיל ללמוד בביאליק",minYear:1997,maxYear:1998};
+	var mapedStory3 = {name:"daniel",myLatLng:{lat: 32.025, lng: 34.779},storyText:"דניאל מתגייס",minYear:2009,maxYear:2011};
+	var mapedStory4 = {name:"nofar",myLatLng:{lat: 32.1755, lng: 34.8356},storyText:"נופר מראיין את הצוות המנצח בתחרות ",minYear:2014,maxYear:2015};
+	var storyarray = [];
+	
+	storyarray.push(mapedStory1);
+	storyarray.push(mapedStory2);
+	storyarray.push(mapedStory3);
+	storyarray.push(mapedStory4);
+	
+	<!--
+	<!--storyarray[0].name = "anton";
+	<!--storyarray[0].myLatLng = {lat: 32.005, lng: 34.885};
+	<!--storyarray[0].storyText = "בגיל 3 עליתי עם הורי ארצה";
+	<!--storyarray[0].minYear = 1993;
+	<!--storyarray[0].maxYear = 1994;
+	<!--
+	<!--storyarray[1].name = "matan";
+	<!--storyarray[1].myLatLng = {lat: 32.025, lng: 34.779};
+	<!--storyarray[1].storyText = "מתן מתחיל ללמוד בביאליק";
+	<!--storyarray[1].minYear = 1997;
+	<!--storyarray[1].maxYear = 1998;
+	<!--
+	<!--storyarray[2].name = "daniel";
+	<!--storyarray[2].myLatLng = {lat: 32.025, lng: 34.779};
+	<!--storyarray[2].storyText = "דניאל מתגייס";
+	<!--storyarray[2].minYear = 2009;
+	<!--storyarray[2].maxYear = 2011;
+	<!--
+	<!--storyarray[3].name = "nofar";
+	<!--storyarray[3].myLatLng = {lat: 32.1755, lng: 34.8356};
+	<!--storyarray[3].storyText = "נופר מראיין את הצוות המנצח בתחרות ";
+	<!--storyarray[3].minYear = 2015;
+	<!--storyarray[3].maxYear = 2015;
+	
+	
+	return storyarray;
+	
+}
+
+function initstories()
+{
+	
+	return GetStories();
+}
+
 
     </script>
     <script async defer
@@ -121,6 +219,12 @@ var marker = new google.maps.Marker({
  </iframe>
 </div> -->
 
+<!-- records stuff-->
+      <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script> (typeof $().emulateTransitionEnd == 'function')|| document.write('<script src="js/bootstrap-3.3.5.min.js"><\/script>')</script>
+      <script src="js/main.js"></script>
 
 </body>
 </html>
