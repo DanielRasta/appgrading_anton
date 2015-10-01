@@ -1,14 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="rtl">
+
 <head>
-  <style type="text/css">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+<style type="text/css">
+
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      .container {
+        width: auto;
+        max-width: 680px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+<style type="text/css">
       html, body { height: 100%; margin: 0; padding: 0; }
       #map { height: 100%; }
     </style>
 
     
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -19,9 +103,6 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="nav-wizard.css">
-  <link rel="stylesheet" href="slider/css/slider.css">
-  <script src="slider/js/bootstrap-slider.js"></script>
   
   <!--RECORD STUFF -->
   <meta charset="utf-8">
@@ -30,7 +111,11 @@
     <link href="css/watson-bootstrap-style.css" rel="stylesheet">
     <link href="css/browser-compatibility.css" rel="stylesheet">
     <link href="css/demo-stt.css" rel="stylesheet">
-	<!--End of record stuff  -->
+    <!--End of record stuff  -->
+<link rel="stylesheet" href="nav-wizard.css">
+  <link rel="stylesheet" href="slider/css/slider.css">
+  <script src="slider/js/bootstrap-slider.js"></script>
+  
 <script type="text/javascript">
       
       $(function() {
@@ -40,42 +125,85 @@
     $("#ex2").slider({});
     });
     </script>
-	<script type= "text/javascript">
-		function toggle_visibility1(id) {
+    <script type= "text/javascript">
+        function toggle_visibility1(id) {
        var e = document.getElementById(id);
        if(e.style.display == 'block')
           e.style.display = 'none';
        else
           e.style.display = 'block';
-		  
-		  toggle_visibility('record');
+          
+          toggle_visibility('record');
     }
-		function StartRec(id)
-		{
-				var e = document.getElementById(id);
-				if(e.innerHTML == "הקלט זכרון")
-					e.innerHTML = "שמור";
-				else
-					e.innerHTML ="הקלט זכרון";
-				
-				toggle_visibility1('record');
-		}
-	</script>
+        function StartRec(id)
+        {
+                var e = document.getElementById(id);
+                if(e.innerHTML == "הקלט זכרון")
+                    e.innerHTML = "שמור";
+                else
+                    e.innerHTML ="הקלט זכרון";
+                
+                toggle_visibility1('record');
+        }
+    </script>
 </head>
+
 <body>
-    
-<div class="row">
-  <div class="col-md-4">&nbsp;</div>
-  <div class="col-md-4">
-  	<center>
-  	<ul class="nav nav-pills nav-wizard">
-    	<li class="active"><a href="#" data-toggle="tab">עבר</a><div class="nav-arrow"></div></li>
-    	<li class="disabled"><div class="nav-wedge"></div><a href="soon.html" data-toggle="tab">הווה</a><div class="nav-arrow"></div></li>
-    	<li class="disabled"><div class="nav-wedge"></div><a href="soon.html" data-toggle="tab">עתיד</a></li>
-	</ul>
-	</center>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Past Simple</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> עזרה</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"> הגדרות</span></a>
+                    </li>
+                    
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-globe" aria-hidden="true"> סייר</span></a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">שלום, מתן.</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+  <div class="col-md-2">&nbsp;</div>
+  <div class="col-md-8">
+    <center>
+    <ul class="nav nav-pills nav-wizard">
+        <li class="active"><a href="#" data-toggle="tab">עבר</a><div class="nav-arrow"></div></li>
+        <li class="disabled"><div class="nav-wedge"></div><a href="soon.html" data-toggle="tab">הווה</a><div class="nav-arrow"></div></li>
+        <li class="disabled"><div class="nav-wedge"></div><a href="soon.html" data-toggle="tab">עתיד</a></li>
+    </ul>
+    </center>
   </div>
-  <div class="col-md-4">&nbsp;</div>
+  <div class="col-md-2">&nbsp;</div>
 </div>
 
 
@@ -93,18 +221,18 @@
 
   <br/>
   <!--Record html-->
-	<div id = "ShowrecordButton" class="button-row nav-inverse-color" style = "width:100%" onclick="StartRec('ShowrecordButton')">הקלט זכרון</div>
-	</div>
+    <div id = "ShowrecordButton" class="button-row nav-inverse-color" style = "width:100%" onclick="StartRec('ShowrecordButton')">הקלט זכרון</div>
+    </div>
 
 
 <div id="record" style ="width:30%;high:30%;position:absolute;z-index:1;display:none;">
-	<div id = "recordButton" class="button-row nav-inverse-color" style = "width:100%">
-		<img id="microphoneIcon" src="images/microphone.svg" class="icon">
-	</div>
-	<ul></ul>
-	
-			<textarea  id="resultsText" style ="width:100% ; "></textarea>
-	
+    <div id = "recordButton" class="button-row nav-inverse-color" style = "width:100%">
+        <img id="microphoneIcon" src="images/microphone.svg" class="icon">
+    </div>
+    <ul></ul>
+    
+            <textarea  id="resultsText" style ="width:100% ; "></textarea>
+    
     
 </div>
 <!--End Record html-->
@@ -119,8 +247,8 @@
 
 
  <div class="row" style="height : 100vh;">
-  <div class="col-md-1">&nbsp;</div>
-  <div class="col-md-10" style="height : 100vh;">
+  
+  <div class="col-md-12" style="height : 100vh;">
  <div id="map"></div>
     <script type="text/javascript">
 
@@ -136,74 +264,74 @@ function initMap() {
    
    var stories = initstories();
       
-	  
-	  
+      
+      
    var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 4,
-			center: stories[0].myLatLng
-		});
-	   for(i=0;i<4;i++)
+            zoom: 4,
+            center: stories[0].myLatLng
+        });
+       for(i=0;i<4;i++)
    {
-		var myLatLng = {lat: stories[i].myLatLng.lat, lng: stories[i].myLatLng.lng};
-		
-		var marker = new google.maps.Marker({
-			position: stories[i].myLatLng,
-			map: map,
-			title: stories[i].storyText
-		});
+        var myLatLng = {lat: stories[i].myLatLng.lat, lng: stories[i].myLatLng.lng};
+        
+        var marker = new google.maps.Marker({
+            position: stories[i].myLatLng,
+            map: map,
+            title: stories[i].storyText
+        });
    }   
 }
 function GetStories()
 {
-	<!--TooDo get stories from db-->
-	
-	
-	
-	var mapedStory1 = {name:"anton",myLatLng:{lat: 32.005, lng: 34.885},storyText:"אנטון עולה לארץ",minYear:1993,maxYear:1994};
-	var mapedStory2 = {name:"matan",myLatLng:{lat: 32.025, lng: 34.779},storyText:"מתן מתחיל ללמוד בביאליק",minYear:1997,maxYear:1998};
-	var mapedStory3 = {name:"daniel",myLatLng:{lat: 32.025, lng: 34.779},storyText:"דניאל מתגייס",minYear:2009,maxYear:2011};
-	var mapedStory4 = {name:"nofar",myLatLng:{lat: 32.1755, lng: 34.8356},storyText:"נופר מראיין את הצוות המנצח בתחרות ",minYear:2014,maxYear:2015};
-	var storyarray = [];
-	
-	storyarray.push(mapedStory1);
-	storyarray.push(mapedStory2);
-	storyarray.push(mapedStory3);
-	storyarray.push(mapedStory4);
-	
-	<!--
-	<!--storyarray[0].name = "anton";
-	<!--storyarray[0].myLatLng = {lat: 32.005, lng: 34.885};
-	<!--storyarray[0].storyText = "בגיל 3 עליתי עם הורי ארצה";
-	<!--storyarray[0].minYear = 1993;
-	<!--storyarray[0].maxYear = 1994;
-	<!--
-	<!--storyarray[1].name = "matan";
-	<!--storyarray[1].myLatLng = {lat: 32.025, lng: 34.779};
-	<!--storyarray[1].storyText = "מתן מתחיל ללמוד בביאליק";
-	<!--storyarray[1].minYear = 1997;
-	<!--storyarray[1].maxYear = 1998;
-	<!--
-	<!--storyarray[2].name = "daniel";
-	<!--storyarray[2].myLatLng = {lat: 32.025, lng: 34.779};
-	<!--storyarray[2].storyText = "דניאל מתגייס";
-	<!--storyarray[2].minYear = 2009;
-	<!--storyarray[2].maxYear = 2011;
-	<!--
-	<!--storyarray[3].name = "nofar";
-	<!--storyarray[3].myLatLng = {lat: 32.1755, lng: 34.8356};
-	<!--storyarray[3].storyText = "נופר מראיין את הצוות המנצח בתחרות ";
-	<!--storyarray[3].minYear = 2015;
-	<!--storyarray[3].maxYear = 2015;
-	
-	
-	return storyarray;
-	
+    <!--TooDo get stories from db-->
+    
+    
+    
+    var mapedStory1 = {name:"anton",myLatLng:{lat: 32.005, lng: 34.885},storyText:"אנטון עולה לארץ",minYear:1993,maxYear:1994};
+    var mapedStory2 = {name:"matan",myLatLng:{lat: 32.025, lng: 34.779},storyText:"מתן מתחיל ללמוד בביאליק",minYear:1997,maxYear:1998};
+    var mapedStory3 = {name:"daniel",myLatLng:{lat: 32.025, lng: 34.779},storyText:"דניאל מתגייס",minYear:2009,maxYear:2011};
+    var mapedStory4 = {name:"nofar",myLatLng:{lat: 32.1755, lng: 34.8356},storyText:"נופר מראיין את הצוות המנצח בתחרות ",minYear:2014,maxYear:2015};
+    var storyarray = [];
+    
+    storyarray.push(mapedStory1);
+    storyarray.push(mapedStory2);
+    storyarray.push(mapedStory3);
+    storyarray.push(mapedStory4);
+    
+    <!--
+    <!--storyarray[0].name = "anton";
+    <!--storyarray[0].myLatLng = {lat: 32.005, lng: 34.885};
+    <!--storyarray[0].storyText = "בגיל 3 עליתי עם הורי ארצה";
+    <!--storyarray[0].minYear = 1993;
+    <!--storyarray[0].maxYear = 1994;
+    <!--
+    <!--storyarray[1].name = "matan";
+    <!--storyarray[1].myLatLng = {lat: 32.025, lng: 34.779};
+    <!--storyarray[1].storyText = "מתן מתחיל ללמוד בביאליק";
+    <!--storyarray[1].minYear = 1997;
+    <!--storyarray[1].maxYear = 1998;
+    <!--
+    <!--storyarray[2].name = "daniel";
+    <!--storyarray[2].myLatLng = {lat: 32.025, lng: 34.779};
+    <!--storyarray[2].storyText = "דניאל מתגייס";
+    <!--storyarray[2].minYear = 2009;
+    <!--storyarray[2].maxYear = 2011;
+    <!--
+    <!--storyarray[3].name = "nofar";
+    <!--storyarray[3].myLatLng = {lat: 32.1755, lng: 34.8356};
+    <!--storyarray[3].storyText = "נופר מראיין את הצוות המנצח בתחרות ";
+    <!--storyarray[3].minYear = 2015;
+    <!--storyarray[3].maxYear = 2015;
+    
+    
+    return storyarray;
+    
 }
 
 function initstories()
 {
-	
-	return GetStories();
+    
+    return GetStories();
 }
 
 
@@ -212,19 +340,28 @@ function initstories()
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCG4LqgXQqx2I2-Gn2gwxJS2hwPYlOP9aA&callback=initMap">
     </script>
   </div>
-  <div class="col-md-1">&nbsp;</div>
+  
 </div>
-<!-- <div class="row map" >
- <iframe class="col-lg-12 col-md-12 col-sm-12" src="http://mapme.com/cultural-history">
- </iframe>
-</div> -->
 
-<!-- records stuff-->
-      <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; - Anton Gellashvilli.</p>
+      </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
       <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
       <script> (typeof $().emulateTransitionEnd == 'function')|| document.write('<script src="js/bootstrap-3.3.5.min.js"><\/script>')</script>
       <script src="js/main.js"></script>
-
 </body>
+
 </html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+  <style type="text/css">
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #map { height: 100%; }
+    </style>
+
+    
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  
+  <!--RECORD STUFF -->
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/watson-bootstrap-style.css" rel="stylesheet">
+    <link href="css/browser-compatibility.css" rel="stylesheet">
+    <link href="css/demo-stt.css" rel="stylesheet">
+	<!--End of record stuff  -->
+<link rel="stylesheet" href="nav-wizard.css">
+  <link rel="stylesheet" href="slider/css/slider.css">
+  <script src="slider/js/bootstrap-slider.js"></script>
+  
+<script type="text/javascript">
+      
+      $(function() {
+    console.log( "ready!" );
+    // $('.slider').slider();
+    // With JQuery
+    $("#ex2").slider({});
+    });
+    </script>
+	<script type= "text/javascript">
+		function toggle_visibility1(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+		  
+		  toggle_visibility('record');
+    }
+		function StartRec(id)
+		{
+				var e = document.getElementById(id);
+				if(e.innerHTML == "הקלט זכרון")
+					e.innerHTML = "שמור";
+				else
+					e.innerHTML ="הקלט זכרון";
+				
+				toggle_visibility1('record');
+		}
+	</script>
+</head>
+<body>
